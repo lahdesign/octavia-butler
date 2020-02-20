@@ -1,5 +1,5 @@
 *{
-    outline: 2px dashed green;
+    /* outline: 2px dashed green; */
     margin: 0;
     padding:0;
 }
@@ -20,27 +20,58 @@
  */
 /* step one - build your grid */
 .container {
-    height: 100%;
+    padding:10%;
+    /* height: 100%; */
     display: grid;
-    grid-gap: 3px;
+    grid-gap: 25px;
     /* this will be  the same for everyone */
     grid-template-columns: repeat(12, 1fr);
     /* this will be customized, based on your grid, use pixels or % */
-    grid-template-rows: 40px 100px 50px 50px;
+    grid-template-rows: auto;
     /* use letters from step 2 to build the grid */
     grid-template-areas: 
         "q q q q q h h h h h h h"
-        "b b b b b h h h h h h h"
-        "b b b b b e e e e e e e"
+        "b b b b e e e e a a a a"
+        "b b b b e e e e a a a a"
         "f f f f f f f f f f f f";
 }
+li{
+    font-weight: 500;
+    padding:10px;
+}
+
+.date{
+    font-weight: 300;
+}
+body{
+    font-size: 4em;
+    font-family: 'Roboto', sans-serif;
+}
+
+ul{
+    list-style: none;
+}
+
+
+h1{
+    font-size: 5em;
+}
+
+h2{
+    padding-top:25px;
+}
+
+h3{
+    padding-top:45px;
+}
+
 
 /* step three - build a grid that becomes active when the pixels are 800px or less */
 @media screen and (max-width: 800px) {
 
     .container{
         display: grid;
-        grid-gap: 3px;
+        grid-gap: 15px;
         /* grid is only one column, keep this way */
         grid-template-columns: 1fr;
         /* you can enter values, or auto will adjust the box sizes based on content */
@@ -49,6 +80,7 @@
         "q"
         "h"
         "b"
+        "a"
         "e"
         "f";
     }
@@ -57,6 +89,8 @@
 /* step 1 - assign each of your sections a letter */
 blockquote {
     grid-area: q;
+    font-weight:300;
+    padding-bottom:30px;
 }
 
 header {
@@ -68,7 +102,7 @@ header {
     grid-area: b;
 }
 
-.eduction {
+.education {
     grid-area: e;
 }
 
